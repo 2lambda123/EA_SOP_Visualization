@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Evolutionary algorithm progress visualization for single objective problems
 
 You can use the [editor on GitHub](https://github.com/UM-LPM/EA_SOP_Visualization/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
