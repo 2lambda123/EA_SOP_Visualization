@@ -1,9 +1,6 @@
 $(document).ready(function () {
   evo = $("#main").evoAnimate({
     playOnLoad: true,
-    //shownGenerations: 0,
-    //source: exampleInput1,
-    //sourceType: "STRING",
     sourceType: "URL",
     source: "../examples/jade_sphere_D10.txt",
     display: [
@@ -17,6 +14,6 @@ $(document).ready(function () {
     fps: 60,
     fullPlayback: true,
     meshInitialDisplay: true,
-    showPreviousLines: true,
+    showPreviousLines: false,
   });
 });

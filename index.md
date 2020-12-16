@@ -2,13 +2,7 @@
 
 Example [jDE Sphere for D10](/pages/example2.html)
 
-Example [jDE Sphere for D10](/pages/example2.html)
-
-Example from string [PSO](pages/example1.html)
-
-You can use the [editor on GitHub](https://github.com/UM-LPM/EA_SOP_Visualization/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Example biger canvas [jDE Sphere for D10](pages/example1.html)
 
 ### Markdown
 
