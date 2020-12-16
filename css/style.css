@@ -1,0 +1,65 @@
+body,html {
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+}
+
+/* Plugin css code */
+.evo-animate-container {
+	/* Disable selection, so we don't get canvas selection when clicking on it*/
+	-moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+}
+.evo-animate-container  .evo-animate-canvas-container > canvas {
+	margin:5px;
+	box-sizing: border-box;
+	border:1px solid black;
+}
+
+.evo-animate-container  .evo-animate-canvas-container {
+	position:relative;
+	display: inline-block;
+	float: left;
+}
+
+
+/* Settings popup */
+.evo-animate-container  .evo-animate-canvas-container .evo-animate-settings {
+	position: absolute;
+	padding:5px;
+	top:0;
+	left:0;
+	display:none;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 2px;
+	width:180px;
+	height:105px;
+}
+
+.evo-animate-container  .evo-animate-canvas-container .evo-animate-settings input {
+	width:50px;
+}
+
+
+/* Under (legend) */
+.evo-animate-container  .evo-animate-under {
+	margin:5px;
+}
+.evo-animate-container  .evo-animate-under .content {
+	display:none;
+}
+
+.evo-animate-container .evo-animate-under .color-box {
+	display:inline-block;
+	width:30px;
+	height:20px;
+}
+
+.evo-animate-container .images {
+	display:none;
+}
