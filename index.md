@@ -1,8 +1,10 @@
 ## Evolutionary algorithm progress visualization for single objective problems
 
-Example from string [PSO](pages/example1.html)
+Example [jDE Sphere for D10](/pages/example2.html)
 
-Example from URL [jDE](/pages/example2.html)
+Example [jDE Sphere for D10](/pages/example2.html)
+
+Example from string [PSO](pages/example1.html)
 
 You can use the [editor on GitHub](https://github.com/UM-LPM/EA_SOP_Visualization/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
