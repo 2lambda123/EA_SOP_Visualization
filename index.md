@@ -1,8 +1,8 @@
 ## Evolutionary algorithm progress visualization for single objective problems
 
-Example1 [From string](http://UM-LPM.github.io/EA_SOP_Visualization/pages/example1.html)
-Example2 [From string2](pages/example1.html)
-Example3 [From string3](/pages/example1.html)
+Example from string [PSO](pages/example1.html)
+
+Example from URL [jDE](/pages/example2.html)
 
 You can use the [editor on GitHub](https://github.com/UM-LPM/EA_SOP_Visualization/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
