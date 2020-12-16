@@ -132,7 +132,8 @@ $.fn.evoAnimate = function (props) {
   // We count the number of steps that have hit the same pixel, and add darker shades to pixels that have had more steps on them, to display algorithm search area
   var USE_SHADING_HISTORY = true;
   var CANVAS_SHADES_NUM = 10;
-  var CANVAS_SHADES_COLORS = ["#D1D1D1", "#CBCBCB", "#B1B1B1", "#979797", "#7D7D7D", "#636363", "#494949", "#2F2F2F", "#151515", "#000000"]; // Array of CANVAS_SHADES_NUM colors
+  //var CANVAS_SHADES_COLORS = ["#D1D1D1", "#CBCBCB", "#B1B1B1", "#979797", "#7D7D7D", "#636363", "#494949", "#2F2F2F", "#151515", "#000000"]; // Array of CANVAS_SHADES_NUM colors
+  var CANVAS_SHADES_COLORS = ["#909090", "#929292", "#959595", "#979797", "#7D7D7D", "#636363", "#494949", "#2F2F2F", "#151515", "#000000"]; // Array of CANVAS_SHADES_NUM colors
   var CANVAS_SHADES = {}; // Array that stores numbers, at which a certain shade should start
 
   // Timeliine globals
