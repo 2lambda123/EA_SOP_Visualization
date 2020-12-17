@@ -2,10 +2,13 @@ $(document).ready(function () {
   evo = $("#main").evoAnimate({
     playOnLoad: true,
     sourceType: "URL",
-    source: "../examples/RW_Sphere_D5.txt",
+    source: "data/RW_Sphere_D10.txt",
     display: [
       [1, 2],
       [3, 4],
+      [5, 6],
+      [7, 8],
+      [9, 10],
     ],
     canvasSize: [300, 300],
     fps: 100,
