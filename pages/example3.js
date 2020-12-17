@@ -7,10 +7,10 @@ $(document).ready(function () {
       [1, 2],
       [3, 4],
     ],
-    canvasSize: [600, 600],
-    fps: 60,
+    canvasSize: [300, 300],
+    fps: 100,
     fullPlayback: true,
-    meshInitialDisplay: true,
+    meshInitialDisplay: false,
     showPreviousLines: false,
   });
 });
