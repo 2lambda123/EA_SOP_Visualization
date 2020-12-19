@@ -139,7 +139,7 @@ $.fn.evoAnimate = function (props) {
   // Timeliine globals
   var TIMELINE_IS_SHOWN = false;
   var TIMELINE_HEIGHT = 50;
-  var TIMELINE_OFFSET_BOTTOM = 10;
+  var TIMELINE_OFFSET_BOTTOM = 20;
   var TIMELINE_COLUMN_WIDTH = 3;
   var TIMELINE_COLUMN_COLOR = "#00AA00";
   var TIMELINE_GENERATION_DIVIDER_COLOR = "#000000";
