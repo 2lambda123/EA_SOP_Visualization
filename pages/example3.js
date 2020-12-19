@@ -2,7 +2,7 @@ $(document).ready(function () {
   evo = $("#main").evoAnimate({
     playOnLoad: true,
     sourceType: "URL",
-    source: "pages/data/RWSi_Sphere_D10.txt",
+    source: "data/RWSi_Sphere_D10.txt",
     display: [
       [1, 2],
       [3, 4],
