@@ -1,5 +1,7 @@
 ## Evolutionary algorithm progress visualization for single objective problems
 
+Example biger canvas [Random search Sphere for D10](pages/example3.html)
+
 Example [jDE Sphere for D10](/pages/example2.html)
 
 Example biger canvas [jDE Sphere for D10](pages/example1.html)
