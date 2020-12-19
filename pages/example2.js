@@ -11,7 +11,7 @@ $(document).ready(function () {
       [9, 10],
     ],
     canvasSize: [300, 300],
-    fps: 120,
+    fps: 20,
     fullPlayback: true,
     meshInitialDisplay: true,
     showPreviousLines: false,
