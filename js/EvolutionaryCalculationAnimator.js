@@ -108,6 +108,7 @@ $.fn.evoAnimate = function (props) {
   var now;
   var then;
   var elapsed;
+  var startTime;
 
   // Playback user settings
   var SHOWN_GENERATIONS_NUMBER = 3; // Defines number of generations to be shown on the canvas e.g.: if 3, the last 3 generations will be shown. 0 = all generations.
@@ -973,12 +974,20 @@ $.fn.evoAnimate = function (props) {
    */
   function animationLoop() {
     // Calculate elapsed time since last loop
+    // Request next frame
+    //https://stackoverflow.com/questions/19764018/controlling-fps-with-requestanimationframe
+    REQUEST_LOOP = window.requestAnimationFrame(animationLoop);
+
     now = Date.now();
     elapsed = now - then;
     if (elapsed > fpsInterval) {
       // Get ready for next frame by setting then=now, but also adjust for your
       // specified fpsInterval not being a multiple of RAF's interval (16.7ms)
-      then = now - (elapsed % fpsInterval);
+      if (then > fpsInterval) then = 0;
+      else then = now - (elapsed % fpsInterval);
+      console.log(
+        "then::" + then + " fpsInterval:" + fpsInterval + " elapsed:" + elapsed + "  (elapsed % fpsInterval):" + (elapsed % fpsInterval)
+      );
       // If canvases are setup
       if (isSetup()) {
         // Check if we should only play until the end of generation
@@ -993,9 +1002,6 @@ $.fn.evoAnimate = function (props) {
         }
       }
     }
-
-    // Request next frame
-    REQUEST_LOOP = window.requestAnimationFrame(animationLoop);
   }
 
   /*
@@ -1150,6 +1156,7 @@ $.fn.evoAnimate = function (props) {
       // Set current time and FPS interval
       fpsInterval = 1000 / fps;
       then = Date.now();
+      startTime = then;
       // Store generation we are starting on
       PLAYBACK_STARTED_GEN = PLAY_STEP > -1 ? ANIMATION_DATA.steps[PLAY_STEP].generation : 1;
       // If we are on the end of one generation, set start to next generation
