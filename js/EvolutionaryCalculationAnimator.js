@@ -1947,13 +1947,13 @@ $.fn.evoAnimate = function (props) {
     // Add images that are needed inside canvas
     container.append('<div class="images"></div>');
     imgContainer = container.find(".images");
-    imgContainer.append('<img class="img-btn-menu" src="/css/imgs/btn-menu.jpg" alt="Menu" />');
-    imgContainer.append('<img class="img-btn-play" src="/css/imgs/btn-play.png" alt="Predvajaj" />');
-    imgContainer.append('<img class="img-btn-step-gen" src="/css/imgs/btn-step-gen.png" alt="Korak generacij" />');
-    imgContainer.append('<img class="img-btn-step-back" src="/css/imgs/btn-step-backward.png" alt="Korak nazaj" />');
-    imgContainer.append('<img class="img-btn-step-forward" src="/css/imgs/btn-step-forward.png" alt="Korak naprej" />');
-    imgContainer.append('<img class="img-btn-settings" src="/css/imgs/btn-settings.png" alt="Nastavitve" />');
-    imgContainer.append('<img class="img-btn-mesh" src="/css/imgs/btn-mesh.png" alt="Mreža" />');
+    imgContainer.append('<img class="img-btn-menu" src="../css/imgs/btn-menu.jpg" alt="Menu" />');
+    imgContainer.append('<img class="img-btn-play" src="../css/imgs/btn-play.png" alt="Predvajaj" />');
+    imgContainer.append('<img class="img-btn-step-gen" src="../css/imgs/btn-step-gen.png" alt="Korak generacij" />');
+    imgContainer.append('<img class="img-btn-step-back" src="../css/imgs/btn-step-backward.png" alt="Korak nazaj" />');
+    imgContainer.append('<img class="img-btn-step-forward" src="../css/imgs/btn-step-forward.png" alt="Korak naprej" />');
+    imgContainer.append('<img class="img-btn-settings" src="../css/imgs/btn-settings.png" alt="Nastavitve" />');
+    imgContainer.append('<img class="img-btn-mesh" src="../css/imgs/btn-mesh.png" alt="Mreža" />');
 
     // Source
     if (!props.hasOwnProperty("source")) {
