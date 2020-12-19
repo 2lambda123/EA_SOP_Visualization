@@ -104,6 +104,8 @@ $.fn.evoAnimate = function (props) {
 
   // Playback FPS limiting variables
   var fps = 10;
+  var evalStep = 1;
+  var showInfoHead = true;
   var fpsInterval;
   var now;
   var then;
@@ -147,6 +149,7 @@ $.fn.evoAnimate = function (props) {
   var TIMELINE_MAX_FITNESS = -999999999;
   var TIMELINE_MIN_FITNESS = 999999999;
   var TIMELINE_FITNESS_SPAN = 0;
+  var BEST_FITNESS = 999999999;
 
   // Mesh
   var MESH_COLOR = "#e5e5e5";
@@ -395,7 +398,7 @@ $.fn.evoAnimate = function (props) {
    */
   function renderShadePoint(canvasObj, x, y) {
     var ctx = canvasObj.bgLayerCtx;
-    var color = CANVAS_SHADES_COLORS[0]; // CM getShade(canvasObj, x, y);
+    var color = getShade(canvasObj, x, y);
     ctx.fillStyle = color;
     ctx.fillRect(x, y, 2, 2);
   }
@@ -827,6 +830,13 @@ $.fn.evoAnimate = function (props) {
       var parent = -1 !== stepData.parentIds[i] ? findStepById(stepData.parentIds[i]) : undefined;
       parents.push(parent);
     }
+    if (showInfoHead) {
+      if (BEST_FITNESS > stepData.fitness) {
+        BEST_FITNESS = stepData.fitness;
+        var s = document.getElementById("best");
+        s.innerHTML = "<div> Best fitness:" + BEST_FITNESS + "</div>";
+      }
+    }
     // Loop throught all the x values of the step
     // Loop throught all canvases, because all canvases will have a change on every step!
     for (var i in CANVAS_ARR) {
@@ -984,14 +994,17 @@ $.fn.evoAnimate = function (props) {
       then = now;
       // Get ready for next frame by setting then=now, but also adjust for your
       // specified fpsInterval not being a multiple of RAF's interval (16.7ms)
+      // if (then > fpsInterval) then = 0;
       then = now - (elapsed % fpsInterval);
       // If canvases are setup
       if (isSetup()) {
         // Check if we should only play until the end of generation
         var currentGen = ANIMATION_DATA.steps.length > PLAY_STEP ? ANIMATION_DATA.steps[PLAY_STEP].generation : PLAYBACK_STARTED_GEN;
         if (FULL_PLAYBACK) {
+          //jumpNGenerations();
           moveOneStepForward();
         } else if (PLAYBACK_STARTED_GEN === currentGen) {
+          //jumpNGenerations();
           moveOneStepForward();
         } else {
           stop();
@@ -1186,7 +1199,7 @@ $.fn.evoAnimate = function (props) {
     if (PLAY_STEP < ANIMATION_DATA.steps.length) {
       var stepData = ANIMATION_DATA.steps[PLAY_STEP];
       checkRenderedGenerations(stepData.generation);
-      renderGenerations(stepData.generation, PLAY_STEP + 1);
+      renderGenerations(stepData.generation, PLAY_STEP + evalStep);
     }
   };
   /*
@@ -1283,6 +1296,7 @@ $.fn.evoAnimate = function (props) {
     var currentStepGen = ANIMATION_DATA.steps[PLAY_STEP]
       ? ANIMATION_DATA.steps[PLAY_STEP].generation
       : evolutionUtil.lastItem(ANIMATION_DATA.steps).generation;
+    console.log("parseInt(num)" + parseInt(num) + "currentStepGen:" + currentStepGen);
     num = currentStepGen + parseInt(num);
     // If we get a number higher than the last generation, jump to last generation
     num = evolutionUtil.lastItem(ANIMATION_DATA.steps).generation < num ? evolutionUtil.lastItem(ANIMATION_DATA.steps).generation : num;
@@ -1945,9 +1959,16 @@ $.fn.evoAnimate = function (props) {
    * Function that checks the given properties and initializes the plugin
    */
   function initialize() {
+    showInfoHead = props.hasOwnProperty("showInfoHead") ? props.showInfoHead : showInfoHead;
+    console.log("showInfoHead:" + showInfoHead);
     container.append("<div/>");
     container = container.find("div:first-child");
     container.addClass("evo-animate-container");
+    console.log("showInfoHead:" + showInfoHead);
+    if (showInfoHead) {
+      container.append("<h2> Data:" + props.source + "</h2>");
+      container.append('<div> <button onClick="window.location.reload();">Start again</button></div> <div id="best">Unknown</div>');
+    }
     // Add images that are needed inside canvas
     container.append('<div class="images"></div>');
     imgContainer = container.find(".images");
@@ -2039,6 +2060,9 @@ $.fn.evoAnimate = function (props) {
     } else if ("string" === sourceType) {
       ANIMATION_DATA = parseInput(props.source);
     }
+    // FPS
+    evalStep = props.hasOwnProperty("evalStep") ? parseInt(props.evalStep) : evalStep;
+    JUMP_OVER_GENERATIONS_NUM = evalStep;
     // FPS
     fps = props.hasOwnProperty("fps") ? parseInt(props.fps) : fps;
     // Shade

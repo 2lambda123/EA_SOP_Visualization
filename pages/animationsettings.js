@@ -1,8 +1,10 @@
 $(document).ready(function () {
+  var file = $("script[dataFile][dataFile!=null]").attr("dataFile");
+  console.log(file);
   evo = $("#main").evoAnimate({
     playOnLoad: true,
     sourceType: "URL",
-    source: "data/JDErand1bin_Sphere_D10.txt",
+    source: file,
     display: [
       [1, 2],
       [3, 4],
@@ -10,10 +12,12 @@ $(document).ready(function () {
       [7, 8],
       [9, 10],
     ],
+    evalStep: 2,
     canvasSize: [300, 300],
-    fps: 100,
+    fps: 120,
     fullPlayback: true,
     meshInitialDisplay: false,
     showPreviousLines: false,
+    showInfoHead: true,
   });
 });
