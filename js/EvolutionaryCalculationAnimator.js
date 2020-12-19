@@ -249,7 +249,7 @@ $.fn.evoAnimate = function (props) {
     }
     // Create array of zeroes with size: numOfShades
     var shadeStarts = [];
-    for (var i = 0; i < numOfShades; i++) shadeStarts.push(0);
+    for (var i = 0; i < numOfShades; i++) shadeStarts.push(1); //1 min to color
 
     // If maximum hits is less than number of shades simply put them in order from front to back
     if (max < numOfShades) {
@@ -395,7 +395,7 @@ $.fn.evoAnimate = function (props) {
    */
   function renderShadePoint(canvasObj, x, y) {
     var ctx = canvasObj.bgLayerCtx;
-    var color = getShade(canvasObj, x, y);
+    var color = CANVAS_SHADES_COLORS[0]; // CM getShade(canvasObj, x, y);
     ctx.fillStyle = color;
     ctx.fillRect(x, y, 2, 2);
   }
@@ -981,13 +981,10 @@ $.fn.evoAnimate = function (props) {
     now = Date.now();
     elapsed = now - then;
     if (elapsed > fpsInterval) {
+      then = now;
       // Get ready for next frame by setting then=now, but also adjust for your
       // specified fpsInterval not being a multiple of RAF's interval (16.7ms)
-      if (then > fpsInterval) then = 0;
-      else then = now - (elapsed % fpsInterval);
-      console.log(
-        "then::" + then + " fpsInterval:" + fpsInterval + " elapsed:" + elapsed + "  (elapsed % fpsInterval):" + (elapsed % fpsInterval)
-      );
+      then = now - (elapsed % fpsInterval);
       // If canvases are setup
       if (isSetup()) {
         // Check if we should only play until the end of generation
