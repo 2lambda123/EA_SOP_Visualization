@@ -1,43 +1,31 @@
-## Evolutionary algorithm progress visualization for single objective problems
+## Problems with D=6
 
-Example biger canvas [Random search Sphere for D10](pages/example3.html)
+### Examples for [Sphere](http://benchmarkfcns.xyz/benchmarkfcns/spherefcn.html)
 
-Example [jDE Sphere for D10](/pages/example2.html)
+[Random](pages/sphere1.html)
 
-Example biger canvas [jDE Sphere for D10](pages/example1.html)
+[GWA](pages/sphere2.html)
 
-### Markdown
+[ABC](pages/sphere3.html)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[jDE](pages/sphere4.html)
 
-```markdown
-Syntax highlighted code block
+### Examples for [Griewank](http://benchmarkfcns.xyz/benchmarkfcns/griewankfcn.html)
 
-# Header 1
+[Random](pages/griewank1.html)
 
-## Header 2
+[GWA](pages/griewank2.html)
 
-### Header 3
+[ABC](pages/griewank3.html)
 
-- Bulleted
-- List
+[jDE](pages/griewank4.html)
 
-1. Numbered
-2. List
+### Examples for [Schwefel26](http://infinity77.net/global_optimization/test_functions_nd_S.html#go_benchmark.Schwefel26)
 
-**Bold** and _Italic_ and `Code` text
+[Random](pages/schwefel1.html)
 
-[Link](url) and ![Image](src)
-```
+[GWA](pages/schwefel2.html)
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+[ABC](pages/schwefel3.html)
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/UM-LPM/EA_SOP_Visualization/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
-
-<script src="/js/toc"></script>
+[jDE](pages/schwefel4.html)
