@@ -1,6 +1,16 @@
-## Problems with D=6 and Eval=10000
+## Selected problems
 
-### Examples for problem [Sphere](http://benchmarkfcns.xyz/benchmarkfcns/spherefcn.html)
+- dimension 6 (D=6). Searching vector [x1,x2,x3,x4,x5,x6].
+- stop criteria is 10.000 evaluations (FES=10000)
+- Selected algorithms (X) (default not optimized pharameters)
+  - Random algorithm
+  - HC Hill Climbing with RANDOM_RESTART
+  - FA Firefly Algorithm (2013)
+  - GWA Grey wolf optimizer (2014)
+  - ABC Artificial Bee Colony (ABC) algorithm (2007)
+  - jDE SalfAdaptiv Differental Evolution (2006)
+
+### Algorithm X search visualization for problem [Sphere](http://benchmarkfcns.xyz/benchmarkfcns/spherefcn.html)
 
 - [Random](pages/sphere1.html)
 - [HC](pages/sphere6.html)
@@ -9,7 +19,7 @@
 - [ABC](pages/sphere3.html)
 - [jDE](pages/sphere4.html)
 
-### Examples for problem [Griewank](http://benchmarkfcns.xyz/benchmarkfcns/griewankfcn.html)
+### Algorithm X search visualization for problem [Griewank](http://benchmarkfcns.xyz/benchmarkfcns/griewankfcn.html)
 
 - [Random](pages/griewank1.html)
 - [HC](pages/griewank6.html)
@@ -18,7 +28,7 @@
 - [ABC](pages/griewank3.html)
 - [jDE](pages/griewank4.html)
 
-### Examples for problem [Schwefel26](http://infinity77.net/global_optimization/test_functions_nd_S.html#go_benchmark.Schwefel26)
+### Algorithm X search visualization for problem [Schwefel26](http://infinity77.net/global_optimization/test_functions_nd_S.html#go_benchmark.Schwefel26)
 
 - [Random](pages/schwefel1.html)
 - [HC](pages/schwefel6.html)
