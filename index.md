@@ -1,3 +1,13 @@
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MNZ51WDCY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1MNZ51WDCY');
+</script>
+
 ## Selected problems
 
 - Problem search space has dimension 6 (D=6). Algorithms are searching vector [x1,x2,x3,x4,x5,x6] that represents the minimum of selected problem.

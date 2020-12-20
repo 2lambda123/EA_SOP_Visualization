@@ -1,4 +1,5 @@
-theme:
-  jekyll-theme-slate
+theme: jekyll-theme-slate
+google_analytics:
+  G-1MNZ51WDCY
   #jekyll-theme-hacker
   #baseurl: /EA_SOP_Visualization #https://stackoverflow.com/questions/16316311/github-pages-and-relative-paths
