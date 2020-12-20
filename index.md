@@ -1,12 +1,12 @@
 ## Selected problems
 
-- dimension 6 (D=6). Searching vector [x1,x2,x3,x4,x5,x6].
-- stop criteria is 10.000 evaluations (FES=10000)
+- Problem search space has dimension 6 (D=6). Searching vector [x1,x2,x3,x4,x5,x6]
+- Stop criteria is 10.000 evaluations (FES=10000)
 - Selected algorithms (X) (default not optimized pharameters)
   - Random algorithm
   - HC Hill Climbing with RANDOM_RESTART
   - FA Firefly Algorithm (2013)
-  - GWA Grey wolf optimizer (2014)
+  - GWA Grey Wolf Optimizer (2014)
   - ABC Artificial Bee Colony (ABC) algorithm (2007)
   - jDE SalfAdaptiv Differental Evolution (2006)
 
