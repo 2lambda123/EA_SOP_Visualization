@@ -1,6 +1,6 @@
 ## Selected problems
 
-- Problem search space has dimension 6 (D=6). Searching vector [x1,x2,x3,x4,x5,x6]
+- Problem search space has dimension 6 (D=6). Algorithms are searching vector [x1,x2,x3,x4,x5,x6] that represents the minimum of selected problem.
 - Stop criteria is 10.000 evaluations (FES=10000)
 - Selected algorithms (X) (default not optimized pharameters)
   - Random algorithm
