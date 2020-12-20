@@ -36,3 +36,5 @@
 - [GWA](pages/schwefel2.html)
 - [ABC](pages/schwefel3.html)
 - [jDE](pages/schwefel4.html)
+
+By [LPM](https://lpm.feri.um.si/en/).
