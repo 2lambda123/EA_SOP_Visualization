@@ -1,5 +1,6 @@
 #https://github.com/pages-themes/slate
 theme: jekyll-theme-slate
+is_project_page: true
 google_analytics:
   G-1MNZ51WDCY
   #jekyll-theme-hacker
