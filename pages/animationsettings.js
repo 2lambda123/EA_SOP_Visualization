@@ -1,10 +1,12 @@
 $(document).ready(function () {
   var file = $("script[dataFile][dataFile!=null]").attr("dataFile");
+  var dataImageHitMap = $("script[dataImage][dataImage!=null]").attr("dataImage");
   console.log(file);
   evo = $("#main").evoAnimate({
     playOnLoad: true,
     sourceType: "URL",
     source: file,
+    dataImage: dataImageHitMap,
     display: [
       [1, 2],
       [3, 4],
