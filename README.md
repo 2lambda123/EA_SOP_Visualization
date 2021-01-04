@@ -4,6 +4,10 @@ Created as part of a [undergraduate thesis](https://dk.um.si/IzpisGradiva.php?id
 
 ## Input
 
+- Use [EARS](https://github.com/UM-LPM/EARS) example to create input file [example](https://github.com/UM-LPM/EARS/blob/master/src/org/um/feri/analyse/sopvisualization/EA_SOP_VisualizationExample.java).
+
+### Manual generator format
+
 algID; algName;[algParams];problemID; problemName;problemDim;[problemParams]
 
 \{id; generation; [parentids]; timestamp; eval; fitness; [x]\}\*
