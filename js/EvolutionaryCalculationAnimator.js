@@ -69,6 +69,7 @@ $.fn.evoAnimate = function (props) {
     ctx: undefined,
     width: 300,
     height: 300,
+    dataImage: undefined,
     allPixels: 90000,
     xIndex: 1, // Index of the algorithm step's X value to be displayed on this canvas's x axis
     yIndex: 1, // Same for the y axis
@@ -887,6 +888,14 @@ $.fn.evoAnimate = function (props) {
   }
 
   /*
+  Get correct image based on hitmap
+  TODO format based on dimensions
+  */
+  function getImageHitMap(fileName, x, y) {
+    //return fileName+"_"+x+"_"+y+".png";
+    return fileName + ".png";
+  }
+  /*
    * Spawns a canvas with the given id
    * @param integer 	id 			Canvas id
    * @param array 		axisIds		Ids of X to put on the axis: [1, 2] defines that x1 is on the X axis and x2 on the Y axis
@@ -919,7 +928,14 @@ $.fn.evoAnimate = function (props) {
 
     c.canvasContainer.append(c.bgCanvas);
     c.bgLayerCtx = c.bgCanvas[0].getContext("2d");
-
+    //Add hitmap image
+    if (dataImage != undefined) {
+      var background = new Image(c.width, c.height);
+      background.src = getImageHitMap(dataImage, c.xIndex, c.yIndex); //"examples/sphere_D10" + ".png";
+      background.onload = function () {
+        c.bgLayerCtx.drawImage(background, 0, 0, c.width, c.height);
+      };
+    }
     // Create canvasStack object
     c.canvasStack = new CanvasStack(id);
 
@@ -1029,8 +1045,9 @@ $.fn.evoAnimate = function (props) {
     // Clear canvases
     for (var i in CANVAS_ARR) {
       var c = CANVAS_ARR[i];
-      c.bgLayerCtx.clearRect(0, 0, c.width, c.height);
+      //TODO temp remove that hitmap is working c.bgLayerCtx.clearRect(0, 0, c.width, c.height);
       c.renderLayerCtx.clearRect(0, 0, c.width, c.height);
+
       // Clear shades counter
       c.shadeStartsCounter = evolutionUtil.fill2DArray(c.shadeStartsCounter, c.width + 1, c.height + 1);
       // Clear searched pixels
@@ -1059,6 +1076,7 @@ $.fn.evoAnimate = function (props) {
         }
       }
     }
+
     // First render shades
     renderAllCanvasesShades();
 
@@ -1087,6 +1105,7 @@ $.fn.evoAnimate = function (props) {
       }
     }
     PLAY_STEP = startStep;
+
     displaySearchedAreaInfo();
   };
 
@@ -2041,6 +2060,7 @@ $.fn.evoAnimate = function (props) {
     }
     // FPS
     fps = props.hasOwnProperty("fps") ? parseInt(props.fps) : fps;
+    dataImage = props.hasOwnProperty("dataImage") ? props.dataImage : dataImage;
     // Shade
     USE_SHADING_HISTORY = props.hasOwnProperty("shadingHistory") ? props.shadingHistory : true;
     //PlayOnLoad

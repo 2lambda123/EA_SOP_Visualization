@@ -27,6 +27,7 @@ $(document).ready(function () {
     //shownGenerations: 0,
     source: exampleInput1,
     sourceType: "STRING",
+    dataImage: "examples/sphere_D10",
     //sourceType: "URL",
     //source: "http://127.0.0.1:5501/examples/jade_sphere_D10.txt",
     //source:'http://localhost/diploma/jade_Schwefel_226.php',
