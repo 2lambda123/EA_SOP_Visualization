@@ -1,7 +1,7 @@
 $(document).ready(function () {
   var file = $("script[dataFile][dataFile!=null]").attr("dataFile");
+  console.log("File:" + file);
   var dataImageHitMap = $("script[dataImage][dataImage!=null]").attr("dataImage");
-  console.log(file);
   console.log("dataImageHitMap:" + dataImageHitMap);
   evo = $("#main").evoAnimate({
     playOnLoad: true,
